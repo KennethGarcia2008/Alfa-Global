@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alfa Global | Electricidad, iluminación y refrigeración en Honduras</title>
+  <meta name="description" content="Venta de materiales y repuestos de electricidad, iluminación y refrigeración comercial para empresas en San Pedro Sula, Honduras.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14212b;
+      --steel: #e9eef2;
+      --white: #ffffff;
+      --yellow: #f2b705;
+      --blue: #2f7fb5;
+      --amber: #d9822b;
+      --muted: #52626f;
+      --head: "Barlow Condensed", "Arial Narrow", sans-serif;
+      --body: "Barlow", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--white); line-height: 1.6; }
+    h1, h2, h3 { font-family: var(--head); line-height: 1.05; margin: 0; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    .wrap { width: min(1100px, 100% - 2.5rem); margin-inline: auto; }
+
+    .top { background: var(--ink); color: var(--white); position: sticky; top: 0; z-index: 10; }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0; }
+    .logo { font-family: var(--head); font-size: 1.7rem; font-weight: 700; text-decoration: none; letter-spacing: .02em; }
+    .logo span { color: var(--yellow); }
+    nav { display: flex; gap: 1.6rem; align-items: center; }
+    nav a { text-decoration: none; font-weight: 500; opacity: .85; }
+    nav a:hover { opacity: 1; }
+    .btn { display: inline-block; padding: .8rem 1.4rem; border-radius: 4px; font-weight: 600; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-size: 1rem; font-family: var(--body); }
+    .btn-yellow { background: var(--yellow); color: var(--ink); }
+    .btn-yellow:hover { background: #ffc61f; }
+    .btn-line { border-color: currentColor; color: var(--white); }
+    .btn-line:hover { background: rgba(255,255,255,.1); }
+
+    .hero { background: var(--ink); color: var(--white); padding: 4.5rem 0 0; }
+    .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; max-width: 14ch; }
+    .hero p { font-size: 1.2rem; max-width: 52ch; color: #c5d0d8; margin: 1.4rem 0 2rem; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+    .lines { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; }
+    .lines a { display: block; padding: 1.2rem 1.4rem; text-decoration: none; font-family: var(--head); font-size: 1.6rem; font-weight: 700; color: var(--ink); }
+    .lines a small { display: block; font-family: var(--body); font-size: .95rem; font-weight: 500; opacity: .8; }
+    .lines a:hover { filter: brightness(1.08); }
+    .l-elec { background: var(--yellow); }
+    .l-ilum { background: var(--amber); }
+    .l-refri { background: var(--blue); color: var(--white) !important; }
+
+    section { padding: 5rem 0; }
+    .alt { background: var(--steel); }
+    h2 { font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 1rem; }
+    .lead { max-width: 60ch; color: var(--muted); font-size: 1.1rem; margin: 0 0 2.5rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--white); border-radius: 4px; padding: 1.6rem; border-top: 6px solid var(--c); scroll-margin-top: 5rem; }
+    .card h3 { font-size: 1.8rem; margin-bottom: .8rem; }
+    .card ul { margin: 0 0 1.2rem; padding-left: 1.1rem; color: var(--muted); }
+    .card li { margin-bottom: .3rem; }
+    .card a { font-weight: 600; text-decoration-thickness: 2px; text-decoration-color: var(--c); text-underline-offset: 4px; }
+
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about p { margin: 0 0 1rem; max-width: 60ch; }
+    .values { list-style: none; margin: 0; padding: 0; }
+    .values li { padding: 1.1rem 0; border-bottom: 1px solid #cfd8de; }
+    .values li:first-child { padding-top: 0; }
+    .values strong { display: block; font-family: var(--head); font-size: 1.5rem; }
+    .values span { color: var(--muted); }
+
+    .brands { display: flex; flex-wrap: wrap; gap: .8rem; padding: 0; margin: 0; list-style: none; }
+    .brands li { background: var(--white); padding: .7rem 1.2rem; border-radius: 4px; font-family: var(--head); font-size: 1.3rem; font-weight: 600; }
+
+    .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; }
+    .contact address { font-style: normal; color: var(--muted); }
+    .contact address p { margin: 0 0 .8rem; }
+    .contact address strong { color: var(--ink); }
+    form { display: grid; gap: 1rem; }
+    label { font-weight: 600; display: grid; gap: .35rem; }
+    input, textarea, select { font: inherit; padding: .75rem .9rem; border: 2px solid #cfd8de; border-radius: 4px; background: var(--white); color: var(--ink); }
+    input:focus, textarea:focus, select:focus { border-color: var(--ink); outline: none; }
+    textarea { min-height: 120px; resize: vertical; }
+    .hint { color: var(--muted); font-size: .9rem; margin: 0; }
+
+    footer { background: var(--ink); color: #aebbc5; padding: 2rem 0; font-size: .95rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+    footer a { text-decoration: none; margin-left: 1.2rem; }
+    footer a:hover { color: var(--white); }
+
+    .wa { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 20; box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+
+    @media (max-width: 800px) {
+      nav a:not(.btn) { display: none; }
+      .about, .contact { grid-template-columns: 1fr; gap: 2rem; }
+      .lines { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="#inicio">Alfa<span>Global</span></a>
+      <nav aria-label="Principal">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#contacto" class="btn btn-yellow">Pedir cotización</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <div class="hero">
+      <div class="wrap">
+        <h1>Materiales para que su operación no se detenga</h1>
+        <p>Repuestos y materiales de electricidad, iluminación y refrigeración comercial, importados y entregados a empresas de toda Honduras.</p>
+        <div class="actions">
+          <a class="btn btn-yellow" href="#contacto">Pedir cotización</a>
+          <a class="btn btn-line" href="https://wa.link/rp4dne" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="lines wrap" style="padding:0">
+        <a class="l-elec" href="#electricidad">Electricidad<small>Cable, tubería, paneles y breakers</small></a>
+        <a class="l-ilum" href="#iluminacion">Iluminación<small>Industrial, interiores y pública</small></a>
+        <a class="l-refri" href="#refrigeracion">Refrigeración<small>Compresores, consumibles y herramientas</small></a>
+      </div>
+    </div>
+
+    <section id="productos">
+      <div class="wrap">
+        <h2>Lo que tenemos en inventario</h2>
+        <p class="lead">Tres líneas para mantenimiento industrial, desarrollo de proyectos y operaciones comerciales.</p>
+        <div class="cards">
+          <article class="card" id="electricidad" style="--c: var(--yellow)">
+            <h3>Electricidad</h3>
+            <ul>
+              <li>Accesorios y cable eléctrico</li>
+              <li>Tubería PVC, IMC y EMT</li>
+              <li>Paneles eléctricos y breakers</li>
+              <li>Soportería</li>
+            </ul>
+            <a href="https://alfahn.com/electricidad-catalogo.php">Ver catálogo</a>
+          </article>
+          <article class="card" id="iluminacion" style="--c: var(--amber)">
+            <h3>Iluminación</h3>
+            <ul>
+              <li>Iluminación industrial</li>
+              <li>Iluminación de interiores</li>
+              <li>Iluminación pública</li>
+            </ul>
+            <a href="https://alfahn.com/iluminacion-catalogo.php">Ver catálogo</a>
+          </article>
+          <article class="card" id="refrigeracion" style="--c: var(--blue)">
+            <h3>Refrigeración</h3>
+            <ul>
+              <li>Compresores y ventiladores</li>
+              <li>Componentes eléctricos</li>
+              <li>Consumibles para aires acondicionados</li>
+              <li>Herramientas y tubería</li>
+            </ul>
+            <a href="https://alfahn.com/refrigeracion-catalogo.php">Ver catálogo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="alt">
+      <div class="wrap about">
+        <div>
+          <h2>Una empresa hondureña que atiende a la industria</h2>
+          <p>Alfa Global ofrece materiales y repuestos de buena calidad a precios competitivos, con marcas de fabricación americana, mexicana, centroamericana y china que cumplen los estándares de cada componente.</p>
+          <p>Si no encuentra lo que busca, lo agregamos a nuestro inventario y lo ponemos a su disposición lo antes posible.</p>
+        </div>
+        <ul class="values">
+          <li><strong>Prontitud</strong><span>Entrega rápida para que sus proyectos y mantenimientos no esperen.</span></li>
+          <li><strong>Variedad de productos y servicios</strong><span>Electricidad, iluminación y refrigeración en un solo proveedor.</span></li>
+          <li><strong>Calidad y garantía</strong><span>Componentes que cumplen los estándares y funcionan.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="marcas">
+      <div class="wrap">
+        <h2>Marcas que distribuimos</h2>
+        <p class="lead">Fabricantes reconocidos en cada línea.</p>
+
+        <ul class="brands">
+          <li>Phelps Dodge</li><li>Bticino</li><li>Legrand</li><li>Cantex</li>
+          <li>Gerfor</li><li>Omega</li><li>Rymco</li><li>Square D</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto" class="alt">
+      <div class="wrap contact">
+        <div>
+          <h2>Pida su cotización</h2>
+          <p class="lead">Cuéntenos qué necesita y le respondemos por WhatsApp.</p>
+          <address>
+            <p><strong>Dirección</strong><br>San Pedro Sula, Cortés, Honduras</p>
+            <p><strong>Teléfono</strong><br><a href="tel:+50489388433">+504 8938 8433</a></p>
+            <p><strong>Correo</strong><br><a href="mailto:ventas@alfacorporativohn.com">ventas@alfacorporativohn.com</a></p>
+          </address>
+        </div>
+        <form id="form">
+          <label>Nombre o empresa
+            <input name="nombre" required autocomplete="organization">
+          </label>
+          <label>Línea de producto
+            <select name="linea">
+              <option>Electricidad</option>
+              <option>Iluminación</option>
+              <option>Refrigeración</option>
+              <option>Otra</option>
+            </select>
+          </label>
+          <label>¿Qué necesita?
+            <textarea name="mensaje" required placeholder="Producto, marca y cantidad aproximada"></textarea>
+          </label>
+          <button class="btn btn-yellow" type="submit">Enviar por WhatsApp</button>
+          <p class="hint">Se abrirá WhatsApp con su mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Alfa Global. Todos los derechos reservados.</span>
+      <span>
+        <a href="https://www.facebook.com/AlfaCorporativoHN" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/alfacorporativohn/" target="_blank" rel="noopener">Instagram</a>
+      </span>
+    </div>
+  </footer>
+
+  <a class="btn btn-yellow wa" href="https://wa.link/rp4dne" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var d = new FormData(e.target);
+      var texto = "Hola, soy " + d.get("nombre") + ". Busco productos de " + d.get("linea") + ": " + d.get("mensaje");
+      window.open("https://wa.me/50489388433?text=" + encodeURIComponent(texto), "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
